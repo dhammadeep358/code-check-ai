@@ -21,6 +21,8 @@ const mongoose = require('mongoose');
 const authRoutes = require('./backend-src/routes/authRoutes');
    const reviewRoutes = require('./backend-src/routes/reviewRoutes');
    const { notFound, errorHandler } = require('./backend-src/middleware/errorMiddleware');
+
+   
 const app = express();
 
 const allowedOrigin = process.env.FRONTEND_URL || '*';
