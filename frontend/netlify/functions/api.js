@@ -45,7 +45,9 @@ app.use(errorHandler);
 let isConnected = false;
 async function ensureDbConnection() {
   if (isConnected && mongoose.connection.readyState === 1) return;
-  await mongoose.connect(process.env.MONGODB_URI);
+
+  // await mongoose.connect(process.env.MONGODB_URI);
+  await mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 8000 });
   isConnected = true;
 }
 
